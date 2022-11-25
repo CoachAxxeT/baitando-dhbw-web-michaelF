@@ -4,6 +4,10 @@
     line-height: 150%;
 }
 
+.fixed-width {
+  width: 1000px;
+  margin: auto;
+}
 header {
   height: 80px;
   display: flex;
@@ -14,9 +18,7 @@ header a, header a img {
 }
 
 header nav {
-  /* Let navigation take the remaining size in this row */
   flex-grow: 1;
-  /* Align navigation items on the right side */
   text-align: right;
   margin: auto;
 }
@@ -32,4 +34,52 @@ header nav a:visited, header nav a:link, header nav a:hover {
 
 header nav a:hover {
   text-decoration: underline;
+}
+
+footer {
+  background-color: #4d4d4d;
+  color: white;
+  margin-top: 20px;
+}
+
+.footer-area {
+  display: flex;
+  padding: 30px 0;
+}
+
+.footer-element {
+  flex-grow: 1;
+  flex-basis: 0;
+  margin:auto;
+}
+
+.footer-nav {
+  text-align: right;
+}
+
+.footer-nav a {
+  margin: 0 20px;
+  font-size: 0.8rem;
+}
+
+.footer-nav a:link, .footer-nav a:visited, .footer-nav a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-nav a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+footer img {
+  height: 50px;
+}
+
+.copyright {
+  text-align: center;
+}
+
+.copyright p {
+  font-size: 0.8rem;
 }
