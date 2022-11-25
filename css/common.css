@@ -1,0 +1,10 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12pt;
+    line-height: 150%;
+}
+
+.fixed-width {
+  width: 1000px;
+  margin: auto;
+}
