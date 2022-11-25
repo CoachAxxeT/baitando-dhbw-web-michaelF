@@ -4,7 +4,32 @@
     line-height: 150%;
 }
 
-.fixed-width {
-  width: 1000px;
+header {
+  height: 80px;
+  display: flex;
+}
+
+header a, header a img {
+  height: inherit;
+}
+
+header nav {
+  /* Let navigation take the remaining size in this row */
+  flex-grow: 1;
+  /* Align navigation items on the right side */
+  text-align: right;
   margin: auto;
+}
+
+header nav a {
+  margin: 0 20px;
+}
+
+header nav a:visited, header nav a:link, header nav a:hover {
+  color: black;
+  text-decoration: none;
+}
+
+header nav a:hover {
+  text-decoration: underline;
 }
