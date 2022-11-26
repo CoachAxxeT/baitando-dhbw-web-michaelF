@@ -2,3 +2,25 @@
   width: 1000px;
   margin: auto;
 }
+
+.features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 100px;
+  margin: 50px 50px;
+  text-align: center;
+}
+
+.feature img {
+  height: 80px;
+}
+.feature p {
+  text-align: center;
+  font-size: large;
+  text
+}
+
+.feature-title {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
