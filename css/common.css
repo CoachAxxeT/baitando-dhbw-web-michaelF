@@ -99,3 +99,15 @@ h1 {
 h2 {
   font-size: 1.3rem;
 }
+
+button {
+  padding: 10px 50px;
+  border-radius: 5px;
+}
+button:hover {
+  color: black;
+  background-color: #EA1F25;
+  cursor: pointer;
+  border-color: black;
+  border-width: 2px;
+}
