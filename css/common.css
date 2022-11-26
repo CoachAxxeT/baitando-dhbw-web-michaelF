@@ -16,6 +16,9 @@ display: flex;
 header a, header a img {
 height: inherit;
 }
+header a img{
+  margin-left: 20px;
+}
 
 header nav {
 flex-grow: 1;
@@ -84,4 +87,16 @@ text-align: center;
 
 .copyright p {
 font-size: 0.8rem;
+}
+
+h1 {
+  font-size: 2.4rem;
+  font-weight: bold;
+  line-height: 120%;
+  padding: 20px;
+}
+
+h2 {
+  font-size: 1.3rem;
+  /*margin-top: 40px;*/
 }
