@@ -4,24 +4,29 @@
 }
 
 .features {
-  display: grid;
+  display: flex;
   grid-template-columns: 1fr 1fr;
   grid-gap: 100px;
   margin: 50px 50px;
   text-align: center;
 }
-
+.feature{
+  width:50%;
+ 
+}
 .feature img {
   height: 80px;
 }
 .feature p {
   font-size: large;
-  margin-inline-end: auto;
-
-}
+  }
 
 .feature-title {
   font-weight: bold;
   font-size: 1.5rem;
 }
-
+.test{
+  display: flex;
+  justify-content: center;
+  column-gap: 50px;
+}
