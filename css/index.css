@@ -5,7 +5,6 @@
 
 .features {
   display: flex;
-  grid-template-columns: 1fr 1fr;
   grid-gap: 100px;
   margin: 50px 50px;
   text-align: center;
@@ -15,18 +14,22 @@
  
 }
 .feature img {
-  height: 80px;
+  height: 90px;
 }
-.feature p {
-  font-size: large;
+.feature-headline p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-justify: auto;
   }
 
-.feature-title {
-  font-weight: bold;
-  font-size: 1.5rem;
-}
-.test{
+
+.feature-headline{
   display: flex;
   justify-content: center;
   column-gap: 50px;
+  align-items: center;
+}
+
+.feature-description{
+  font-size: 1.2rem;
 }
