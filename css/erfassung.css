@@ -20,3 +20,16 @@ form div p {
 .button-position{
   text-align: center;
 }
+
+.button-cancel{
+  border-color: grey;
+  background-color: white;
+  color: black;
+}
+
+.button-safe{
+  border-color: black;
+  background-color: black;
+  color: white;
+
+}
