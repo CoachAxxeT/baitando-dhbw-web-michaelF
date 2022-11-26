@@ -15,12 +15,13 @@
   height: 80px;
 }
 .feature p {
-  text-align: center;
   font-size: large;
-  text
+  margin-inline-end: auto;
+
 }
 
 .feature-title {
   font-weight: bold;
   font-size: 1.5rem;
 }
+
