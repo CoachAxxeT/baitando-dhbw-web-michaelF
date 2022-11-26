@@ -3,6 +3,7 @@
 <head>
   <title>POWERTRACK</title>
   <link rel="stylesheet" href="css/common.css"/>
+  <link rel="stylesheet" href="css/erfassung.css"/>
 
 </head>
 
@@ -24,21 +25,21 @@
   </div>
 
 
-  <form>
+  <form class="main-sideclearance">
     <div>
-      <label for="datum">Datum*</label>
+      <label class="headline-label"for="datum">Datum*</label>
       <p>Tragen sie hier das Ablesedatum des Zählerstandes ein</p>
       <input id="datum" type="date">
     </div>
     <div>
-      <label for="zaehlerstand">Z&auml;hlerstand in kWh*</label>
+      <label class="headline-label"for="zaehlerstand">Z&auml;hlerstand in kWh*</label>
       <p>Tragen Sie hier den abgelesenen Zählerstand in der Einheit kWh ein. </p>
       <input id="zaehlerstand" type="number">
 
     </div>
   </form>
 
-  <div>
+  <div class="main-sideclearance">
   <a href="verwaltung.html"><button>Abbrechen</button></a>
   <a href="verwaltung.html"><button>Speichern</button></a>
   </div>
