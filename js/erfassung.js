@@ -5,21 +5,19 @@
  function initialize() {
   console.debug("Initializing create and edit page")
 
-  var taskId = new URLSearchParams(location.search).get("id");
-  if (taskId) {
-      console.debug(`Page loaded in edit mode for task with ID: ${taskId}`);
-      var task = getTaskById(loadStoredTasks(), taskId);
-      if (task) {
-          setValueById("title", task.title);
-          setValueById("notes", task.notes);
-          setValueById("due", task.due);
-          setValueById("responsible", task.responsible);
+  var usageId = new URLSearchParams(location.search).get("id");
+  if (usageId) {
+      console.debug(`Page loaded in edit mode for usage with ID: ${usageId}`);
+      var usage = getUsageById(loadStoredUsages(), usageId);
+      if (usage) {
+          setValueById("datum", usage.datum);
+          setValueById("zaehlerstand", usage.zaehlerstand);
+          
 
-          setTextContentById("page-title", "Aufgabe bearbeiten");
           setTextContentById("save-btn", "Speichern");
-          setAttributeById("save-btn", "onclick", `save('${taskId}')`);
+          setAttributeById("save-btn", "onclick", `save('${usageId}')`);
       } else {
-          console.error("Task not found for ID: " + taskId);
+          console.error("Usage not found for ID: " + usageId);
       }
   } else {
       console.debug("Page loaded in create mode");
@@ -75,14 +73,14 @@ function setAttributeById(id, attributeName, attributeValue) {
 /**
 * Searches for a task contained in the local storage.
 *
-* @param tasks The list of tasks to search in.
+* @param usages The list of tasks to search in.
 * @param id The ID of the task to search for.
 * @returns {any|undefined} The task, if it was found.
 */
-function getTaskById(tasks, id) {
-  for (var task of tasks) {
-      if (task.id === id) {
-          return task;
+function getUsageById(usages, id) {
+  for (var usage of usages) {
+      if (usage.id === id) {
+          return usage;
       }
   }
   return undefined;
@@ -94,35 +92,35 @@ function getTaskById(tasks, id) {
 * @param id The ID of the task, if a task should be updated.
 */
 function save(id) {
-  var tasks = loadStoredTasks();
-  var task = createTaskFromInput(id);
+  var usages = loadStoredUsages();
+  var usage = createUsageFromInput(id);
 
   if (id) {
-      replaceTask(tasks, id, task);
+      replaceUsage(usages, id, usage);
   } else {
-      tasks.push(createTaskFromInput());
+      usages.push(createUsageFromInput());
   }
-  storeTasks(tasks);
-  console.debug("Task saved");
+  storeUsages(usages);
+  console.debug("Usage saved");
 }
 
 /**
 * Replace a task with a specific ID in a task array.
 *
-* @param tasks The array in which the task should be replaced.
+* @param usages The array in which the task should be replaced.
 * @param idToReplace The ID of the task to replace.
-* @param updatedTask The task object replacing the task with the given ID.
+* @param updatedUsage The task object replacing the task with the given ID.
 */
-function replaceTask(tasks, idToReplace, updatedTask) {
-  if (tasks && idToReplace && updatedTask) {
-      for (var i = 0; i < tasks.length; i++) {
-          if (tasks[i].id === idToReplace) {
-              tasks[i] = updatedTask
+function replaceUsage(usages, idToReplace, updatedUsage) {
+  if (usages && idToReplace && updatedUsage) {
+      for (var i = 0; i < usages.length; i++) {
+          if (usages[i].id === idToReplace) {
+              usages[i] = updatedUsage
               return;
           }
       }
   } else {
-      console.error("Invalid arguments to replace task");
+      console.error("Invalid arguments to replace usage");
   }
   console.error(`Element with ID not known: ${idToReplace}`);
 }
@@ -133,11 +131,10 @@ function replaceTask(tasks, idToReplace, updatedTask) {
 * @param id An existing ID, if it is known. If not provided, a new ID will be generated.
 * @returns {{notes: (*|undefined), due: (*|undefined), responsible: (*|undefined), id: string, title: (*|undefined)}} Task object.
 */
-function createTaskFromInput(id) {
-  var title = getInputValueById("title");
-  var notes = getInputValueById("notes");
-  var responsible = getInputValueById("responsible");
-  var due = getInputValueById("due");
+function createUsageFromInput(id) {
+  var datum = getInputValueById("datum");
+  var notes = getInputValueById("zaehlerstand");
+
 
   // If no ID is provided, we create one
   if (!id) {
@@ -146,10 +143,9 @@ function createTaskFromInput(id) {
 
   return {
       id: id,
-      title: title,
-      notes: notes,
-      due: due,
-      responsible: responsible
+      datum: datum,
+      zaehlerstand: zaehlerstand,
+      
   }
 }
 

@@ -1,21 +1,20 @@
 /**
-/**
  * Initialize the page. Will load all tasks from the local storage and show them.
  */
  function initialize() {
   console.debug("Initializing list page")
-  showTasks(loadStoredTasks());
+  showUsages(loadStoredUsages());
 }
 
 /**
 * Display the given tasks in the task list.
 *
-* @param tasks The tasks to show in the task list.
+* @param usages The tasks to show in the task list.
 */
-function showTasks(tasks) {
-  if (tasks) {
-      for (var task of tasks) {
-          var taskHtmlContent = `
+function showUsages(usages) {
+  if (usages) {
+      for (var usage of usages) {
+          var usageHtmlContent = `
           <div class="list-task-checkbox">
               <img src="img/unchecked-box.png" onclick="deleteTask('${task.id}')"/>
           </div>
@@ -36,12 +35,12 @@ function showTasks(tasks) {
           </div>
       `;
 
-          var taskLi = document.createElement("li");
-          taskLi.innerHTML = taskHtmlContent;
-          appendById("tasks", taskLi);
+          var usageLi = document.createElement("li");
+          usageLi.innerHTML = usageHtmlContent;
+          appendById("usages", usageLi);
       }
   } else {
-      console.error("No tasks provided to be shown")
+      console.error("No usages provided to be shown")
   }
 }
 
@@ -64,39 +63,39 @@ function appendById(id, elementToAppend) {
 *
 * @param id The ID of the task to delete.
 */
-function deleteTask(id) {
-  console.debug(`Attempting to delete task with ID: ${id}`);
+function deleteUsage(id) {
+  console.debug(`Attempting to delete usage with ID: ${id}`);
 
-  var tasks = loadStoredTasks();
-  if (tasks && id) {
-      for (var i = 0; i < tasks.length; i++) {
-          if (tasks[i].id === id) {
-              tasks.splice(i, 1);
-              storeTasks(tasks);
-              cleanTaskList();
-              showTasks(tasks);
+  var usages = loadStoredUsages();
+  if (usages && id) {
+      for (var i = 0; i < usages.length; i++) {
+          if (usages[i].id === id) {
+              usages.splice(i, 1);
+              storeUsages(usages);
+              cleanUsageList();
+              showUsages(usages);
 
-              console.info(`Deleted task with ID: ${id}`);
+              console.info(`Deleted usage with ID: ${id}`);
 
               break;
           }
       }
   } else {
-      console.error("Invalid arguments to remove task");
+      console.error("Invalid arguments to remove usage");
   }
 }
 
 /**
 * Remove all tasks from the task list.
 */
-function cleanTaskList() {
+function cleanUsageList() {
 
-  var taskList = document.getElementById("tasks");
-  if (taskList) {
-      taskList.innerHTML = "";
-      console.debug("Cleared task list");
+  var usageList = document.getElementById("usages");
+  if (usageList) {
+      usageList.innerHTML = "";
+      console.debug("Cleared usage list");
   } else {
-      console.error("Task list not found");
+      console.error("Usage list not found");
   }
 }
 
@@ -122,3 +121,4 @@ function formatDate(date) {
   console.debug(`Formatted date is: ${formattedDate}`);
   return formattedDate;
 }
+

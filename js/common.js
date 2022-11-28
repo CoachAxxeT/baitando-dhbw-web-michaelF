@@ -3,12 +3,12 @@
  *
  * @returns {*[]|any} Stored tasks from local storage or empty array, if no tasks were present.
  */
- function loadStoredTasks(storageKey = "usage") {
-  var storedUsageJson = localStorage.getItem(storageKey);
-  if (storedUsageJson) {
-      var usage = JSON.parse(storedUsageJson);
-      console.debug(`Count of loaded tasks: ${usage.length}`);
-      return usage;
+ function loadStoredUsages(storageKey = "usages") {
+  var storedUsagesJson = localStorage.getItem(storageKey);
+  if (storedUsagesJson) {
+      var usages = JSON.parse(storedUsagesJson);
+      console.debug(`Count of loaded usages: ${usages.length}`);
+      return usages;
   }
 
   return [];
@@ -17,13 +17,13 @@
 /**
 * Store tasks in the local storage.
 *
-* @param tasks Tasks to store.
+* @param usages Tasks to store.
 */
-function storeUsage(usage, storageKey = "usage") {
-  if (usage) {
-      localStorage.setItem(storageKey, JSON.stringify(usage));
-      console.debug(`Count of stored usage: ${usage.length}`);
+function storeUsages(usages, storageKey = "usages") {
+  if (usages) {
+      localStorage.setItem(storageKey, JSON.stringify(usages));
+      console.debug(`Count of stored usages: ${usages.length}`);
   } else {
-      console.error("No usage to store");
+      console.error("No usages to store");
   }
 }
