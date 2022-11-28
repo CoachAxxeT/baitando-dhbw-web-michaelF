@@ -20,7 +20,7 @@
 }
 
 .list-allusages li:nth-child(odd) {
-  background-color: lightgray;
+  background-color: #E6E6E6;
 }
 
 .list-allusages li {
