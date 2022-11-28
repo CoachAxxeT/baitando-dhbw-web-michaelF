@@ -1,5 +1,5 @@
 /**
- * Initialize the page. Will load all tasks from the local storage and show them.
+ * Initialize the page. Will load all usages from the local storage and show them.
  */
  function initialize() {
   console.debug("Initializing list page")
@@ -7,31 +7,30 @@
 }
 
 /**
-* Display the given tasks in the task list.
+* Display the given usages in the usage list.
 *
-* @param usages The tasks to show in the task list.
+* @param usages The usages to show in the usage list.
 */
 function showUsages(usages) {
   if (usages) {
       for (var usage of usages) {
           var usageHtmlContent = `
-          <div class="list-task-checkbox">
-              <img src="img/unchecked-box.png" onclick="deleteTask('${task.id}')"/>
+          <div class="list-usage-checkbox">
+              <img src="img/counter_dark.png" onclick="deleteUsage('${usage.id}')"/>
           </div>
-          <div class="list-task-description">
-              <p class="list-task-title">${task.title}</p>
-              <p class="list-task-notes">${task.notes}</p>
+          <div class="list-usage-description">
+              <p class="list-usage-title">${usage.zaehlerstand}</p>
           </div>
-          <div class="list-task-due">
-              <img src="img/faelligkeit.svg"/>
-              <p>${formatDate(new Date(task.due))}</p>
+          <div class="list-usage-due">
+              <img src="img/counter_dark.png"/>
+              <p>${formatDate(new Date(usage.datum))}</p>
           </div>
-          <div class="list-task-responsible">
-              <img src="img/verantwortlich.svg"/>
-              <p>${task.responsible}</p>
+          <div class="list-usage-responsible">
+              <img src="img/counter_dark.png"/>
+              <p>${usage.datum}</p>
           </div>
-          <div class="list-task-edit">
-              <a href="anlage.html?id=${task.id}"><img src="img/bearbeiten.svg"/></a>
+          <div class="list-usage-edit">
+              <a href="anlage.html?id=${usage.id}"><img src="img/counter_dark.png"/></a>
           </div>
       `;
 
@@ -59,9 +58,9 @@ function appendById(id, elementToAppend) {
 }
 
 /**
-* Delete the task with the given ID.
+* Delete the usage with the given ID.
 *
-* @param id The ID of the task to delete.
+* @param id The ID of the usage to delete.
 */
 function deleteUsage(id) {
   console.debug(`Attempting to delete usage with ID: ${id}`);
@@ -86,7 +85,7 @@ function deleteUsage(id) {
 }
 
 /**
-* Remove all tasks from the task list.
+* Remove all usages from the usage list.
 */
 function cleanUsageList() {
 
