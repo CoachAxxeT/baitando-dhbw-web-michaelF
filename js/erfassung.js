@@ -10,10 +10,9 @@
       console.debug(`Page loaded in edit mode for usage with ID: ${usageId}`);
       var usage = getUsageById(loadStoredUsages(), usageId);
       if (usage) {
-          setValueById("title", usage.title);
-          setValueById("notes", usage.notes);
-          setValueById("due", usage.due);
-          setValueById("responsible", usage.responsible);
+          setValueById("datum", usage.datum);
+          setValueById("zaehlerstand", usage.notes);
+          
 
           setTextContentById("page-title", "Aufgabe bearbeiten");
           setTextContentById("save-btn", "Speichern");
@@ -134,10 +133,9 @@ function replaceUsage(usages, idToReplace, updatedUsage) {
 * @returns {{notes: (*|undefined), due: (*|undefined), responsible: (*|undefined), id: string, title: (*|undefined)}} Usage object.
 */
 function createUsageFromInput(id) {
-  var title = getInputValueById("title");
-  var notes = getInputValueById("notes");
-  var responsible = getInputValueById("responsible");
-  var due = getInputValueById("due");
+  var datum = getInputValueById("datum");
+  var zaehlerstand = getInputValueById("zaehlerstand");
+  
 
   // If no ID is provided, we create one
   if (!id) {
@@ -146,10 +144,9 @@ function createUsageFromInput(id) {
 
   return {
       id: id,
-      title: title,
-      notes: notes,
-      due: due,
-      responsible: responsible
+      datum: datum,
+      zaehlerstand: zaehlerstand
+    
   }
 }
 

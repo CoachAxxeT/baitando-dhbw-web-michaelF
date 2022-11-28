@@ -15,5 +15,68 @@
 /* Alle Liste Elemente
 
 */
+.list-allusages {
+  padding: 0;
+}
 
+.list-allusages li:nth-child(odd) {
+  background-color: lightgray;
+}
+
+.list-allusages li {
+  display: flex;
+  padding: 10px 0;
+}
+
+.list-allusages img {
+  width: 30px;
+  height: 100%;
+}
+
+.list-allusages p {
+  margin: 0;
+}
+
+.list-allusages div {
+  padding: 5px 10px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.list-usage-title {
+  font-weight: bold;
+}
+
+.list-usage-notes {
+  font-style: italic;
+}
+
+.list-usage-checkbox, .list-usage-edit {
+  width: 5%;
+}
+
+.list-usage-due {
+  width: 15%;
+  display: flex;
+  margin: auto;
+  font-weight: bold;
+}
+
+.list-usage-responsible {
+  width: 25%;
+  display: flex;
+  margin: auto;
+  font-weight: bold;
+}
+
+.list-usage-description {
+  width: 50%;
+}
+
+.list-usage-due img, .list-usage-due p, .list-usage-responsible img,.list-usage-responsible p {
+  margin-top: auto;
+  margin-bottom: auto;
+  text-align: left;
+  padding: 0 5px;
+}
 

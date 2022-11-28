@@ -16,22 +16,22 @@ function showUsages(usages) {
       for (var usage of usages) {
           var usageHtmlContent = `
           <div class="list-usage-checkbox">
-              <img src="img/unchecked-box.png" onclick="deleteUsage('${usage.id}')"/>
+              <img src="img/counter_dark.png" onclick="deleteUsage('${usage.id}')"/>
           </div>
           <div class="list-usage-description">
-              <p class="list-usage-title">${usage.title}</p>
-              <p class="list-usage-notes">${usage.notes}</p>
+              <p class="list-usage-title">${usage.zaehlerstand}</p>
+              <p class="list-usage-notes">${usage.zaehlerstand}</p>
           </div>
           <div class="list-usage-due">
-              <img src="img/faelligkeit.svg"/>
-              <p>${formatDate(new Date(usage.due))}</p>
+              <img src="img/counter_dark.png"/>
+              <p>${formatDate(new Date(usage.datum))}</p>
           </div>
           <div class="list-usage-responsible">
-              <img src="img/verantwortlich.svg"/>
-              <p>${usage.responsible}</p>
+              <img src="img/counter_dark.png"/>
+              <p>${usage.zaehlerstand}</p>
           </div>
           <div class="list-usage-edit">
-              <a href="anlage.html?id=${usage.id}"><img src="img/bearbeiten.svg"/></a>
+              <a href="anlage.html?id=${usage.id}"><img src="img/counter_dark.png"/></a>
           </div>
       `;
 
