@@ -15,7 +15,35 @@ muss noch bearbeitet werden
 function showUsages(usages) {
   if (usages) {
       for (var usage of usages) {
-          var usageHtmlContent = `
+          var usageHtmlContent = 
+          `
+            
+            <div class="list-usage-date">
+                <img src="img/calendar.png">
+                <p>${formatDate(new Date(usage.datum))}</p>
+            </div>
+
+            <div class="list-usage-counter">
+                <img src="img/counter_dark.png">
+                <p>${usage.zaehlerstand} kWh</p>
+            </div>
+
+            <div class ="list-usage-difference">
+                <img src="img/energy-consumption_dark.png">
+                <p class="list-usage-difference-1">Verbrauch</p>
+                <p class="list-usage-difference-2">Datum</p>
+            </div>
+
+            <div>
+                <img src="img/delete.png">
+            </div>
+          
+          
+          `
+          
+          /*`
+
+
           <div class="list-usage-checkbox">
               <img src="img/counter_dark.png" onclick="deleteUsage('${usage.id}')"/>
           </div>
@@ -34,7 +62,7 @@ function showUsages(usages) {
           <div class="list-usage-edit">
               <a href="anlage.html?id=${usage.id}"><img src="img/counter_dark.png"/></a>
           </div>
-      `;
+      `*/;
 
           var usageLi = document.createElement("li");
           usageLi.innerHTML = usageHtmlContent;
