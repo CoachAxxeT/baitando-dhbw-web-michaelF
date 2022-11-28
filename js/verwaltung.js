@@ -1,20 +1,21 @@
 /**
+/**
  * Initialize the page. Will load all tasks from the local storage and show them.
  */
  function initialize() {
-  console.debug("Initializing verwaltung page")
-  showUsage(loadStoredUsage());
+  console.debug("Initializing list page")
+  showTasks(loadStoredTasks());
 }
 
 /**
 * Display the given tasks in the task list.
 *
-* @param usage The tasks to show in the task list.
+* @param tasks The tasks to show in the task list.
 */
-function showUsage(usage) {
-  if (usage) {
-      for (var usage of usage) {
-          var usageHtmlContent = `
+function showTasks(tasks) {
+  if (tasks) {
+      for (var task of tasks) {
+          var taskHtmlContent = `
           <div class="list-task-checkbox">
               <img src="img/unchecked-box.png" onclick="deleteTask('${task.id}')"/>
           </div>
@@ -35,9 +36,9 @@ function showUsage(usage) {
           </div>
       `;
 
-          var usageLi = document.createElement("li");
-          usageLi.innerHTML = usageHtmlContent;
-          appendById("usage", usageLi);
+          var taskLi = document.createElement("li");
+          taskLi.innerHTML = taskHtmlContent;
+          appendById("tasks", taskLi);
       }
   } else {
       console.error("No tasks provided to be shown")
