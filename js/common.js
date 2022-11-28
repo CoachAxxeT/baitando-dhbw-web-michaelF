@@ -1,7 +1,7 @@
 /**
- * Load stored tasks from local storage, if some are stored there.
+ * Load stored usages from local storage, if some are stored there.
  *
- * @returns {*[]|any} Stored tasks from local storage or empty array, if no tasks were present.
+ * @returns {*[]|any} Stored usages from local storage or empty array, if no usages were present.
  */
  function loadStoredUsages(storageKey = "usages") {
   var storedUsagesJson = localStorage.getItem(storageKey);
@@ -15,9 +15,9 @@
 }
 
 /**
-* Store tasks in the local storage.
+* Store usages in the local storage.
 *
-* @param usages Tasks to store.
+* @param usages Usages to store.
 */
 function storeUsages(usages, storageKey = "usages") {
   if (usages) {

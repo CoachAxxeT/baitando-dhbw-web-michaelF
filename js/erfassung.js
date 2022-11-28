@@ -1,5 +1,5 @@
 /**
- * Initialize the page. Will provide a form to create a new task, if no ID is provided as query parameter. If
+ * Initialize the page. Will provide a form to create a new usage, if no ID is provided as query parameter. If
  * an ID is provided as query parameter, an edit form will be shown.
  */
  function initialize() {
@@ -10,10 +10,12 @@
       console.debug(`Page loaded in edit mode for usage with ID: ${usageId}`);
       var usage = getUsageById(loadStoredUsages(), usageId);
       if (usage) {
-          setValueById("datum", usage.datum);
-          setValueById("zaehlerstand", usage.zaehlerstand);
-          
+          setValueById("title", usage.title);
+          setValueById("notes", usage.notes);
+          setValueById("due", usage.due);
+          setValueById("responsible", usage.responsible);
 
+          setTextContentById("page-title", "Aufgabe bearbeiten");
           setTextContentById("save-btn", "Speichern");
           setAttributeById("save-btn", "onclick", `save('${usageId}')`);
       } else {
@@ -71,11 +73,11 @@ function setAttributeById(id, attributeName, attributeValue) {
 }
 
 /**
-* Searches for a task contained in the local storage.
+* Searches for a usage contained in the local storage.
 *
-* @param usages The list of tasks to search in.
-* @param id The ID of the task to search for.
-* @returns {any|undefined} The task, if it was found.
+* @param usages The list of usages to search in.
+* @param id The ID of the usage to search for.
+* @returns {any|undefined} The usage, if it was found.
 */
 function getUsageById(usages, id) {
   for (var usage of usages) {
@@ -89,7 +91,7 @@ function getUsageById(usages, id) {
 /**
 * Save the data contained in the form.
 *
-* @param id The ID of the task, if a task should be updated.
+* @param id The ID of the usage, if a usage should be updated.
 */
 function save(id) {
   var usages = loadStoredUsages();
@@ -105,11 +107,11 @@ function save(id) {
 }
 
 /**
-* Replace a task with a specific ID in a task array.
+* Replace a usage with a specific ID in a usage array.
 *
-* @param usages The array in which the task should be replaced.
-* @param idToReplace The ID of the task to replace.
-* @param updatedUsage The task object replacing the task with the given ID.
+* @param usages The array in which the usage should be replaced.
+* @param idToReplace The ID of the usage to replace.
+* @param updatedUsage The usage object replacing the usage with the given ID.
 */
 function replaceUsage(usages, idToReplace, updatedUsage) {
   if (usages && idToReplace && updatedUsage) {
@@ -126,15 +128,16 @@ function replaceUsage(usages, idToReplace, updatedUsage) {
 }
 
 /**
-* Create a task object from the values of the form input fields related to a task.
+* Create a usage object from the values of the form input fields related to a usage.
 *
 * @param id An existing ID, if it is known. If not provided, a new ID will be generated.
-* @returns {{notes: (*|undefined), due: (*|undefined), responsible: (*|undefined), id: string, title: (*|undefined)}} Task object.
+* @returns {{notes: (*|undefined), due: (*|undefined), responsible: (*|undefined), id: string, title: (*|undefined)}} Usage object.
 */
 function createUsageFromInput(id) {
-  var datum = getInputValueById("datum");
-  var notes = getInputValueById("zaehlerstand");
-
+  var title = getInputValueById("title");
+  var notes = getInputValueById("notes");
+  var responsible = getInputValueById("responsible");
+  var due = getInputValueById("due");
 
   // If no ID is provided, we create one
   if (!id) {
@@ -143,9 +146,10 @@ function createUsageFromInput(id) {
 
   return {
       id: id,
-      datum: datum,
-      zaehlerstand: zaehlerstand,
-      
+      title: title,
+      notes: notes,
+      due: due,
+      responsible: responsible
   }
 }
 
