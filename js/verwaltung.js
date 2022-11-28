@@ -28,14 +28,17 @@ function showUsages(usages) {
                 <p>${usage.zaehlerstand} kWh</p>
             </div>
 
-            <div class ="list-usage-difference">
+            <div class ="list-usage-difference-image">
                 <img src="img/energy-consumption_dark.png">
+            </div>
+
+            <div class ="list-usage-difference">
                 <p class="list-usage-difference-1">Verbrauch</p>
                 <p class="list-usage-difference-2">Datum</p>
             </div>
 
-            <div>
-                <img src="img/delete.png">
+            <div class="list-usage-delete">
+                <img src="img/delete.png" onclick="deleteUsage('${usage.id}')">
             </div>
           
           

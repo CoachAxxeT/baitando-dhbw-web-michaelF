@@ -100,8 +100,15 @@
   text-align: left;
   padding: 0 5px;
 }
+.list-usage-difference-image{
+  width: 5%;
+  margin-top: auto;
+  margin-bottom: auto;
+  text-align: left;
 
+}
 .list-usage-difference{
+  width: 25%;
   margin-top: auto;
   margin-bottom: auto;
   text-align: left;
@@ -112,4 +119,11 @@
 
 .list-usage-difference-2{
   font-style: italic;
+}
+
+.list-usage-delete{
+  width: 10%;
+  margin-top: auto;
+  margin-bottom: auto;
+  text-align: left;
 }
