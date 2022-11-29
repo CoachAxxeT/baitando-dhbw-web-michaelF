@@ -64,7 +64,7 @@ text-align: right;
 
 .footer-nav a {
 margin: 0 20px;
-font-size: 0.8rem;
+font-size: 1rem;
 }
 
 .footer-nav a:link, .footer-nav a:visited, .footer-nav a:hover {
@@ -86,7 +86,7 @@ text-align: center;
 }
 
 .copyright p {
-font-size: 0.8rem;
+font-size: 1rem;
 }
 
 h1 {
