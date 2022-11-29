@@ -46,7 +46,7 @@ function showUsages(usages) {
     var counter = 0;
     if (usages) {
       for (var usage of usages) {
-        
+    
           var usageHtmlContent = 
           `
             <div class="list-usage-date">
@@ -75,9 +75,7 @@ function showUsages(usages) {
             </div>
           
           
-          `
-        
- ;
+          `;
  
           counter = counter +1
           var usageLi = document.createElement("li");
