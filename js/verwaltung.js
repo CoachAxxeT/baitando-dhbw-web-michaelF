@@ -43,7 +43,7 @@ function showUsages(usages) {
     usageLi.innerHTML = usageFirstLine;
     appendById("usages", usageLi);
  }
-    var counter = 0;
+    var counter = 1;
     if (usages) {
       for (var usage of usages) {
     
@@ -60,13 +60,13 @@ function showUsages(usages) {
             </div>
 
             <div class ="list-usage-difference-image">
-                <img src="img/energy-consumption_dark.png">
+                ${consumptionImage(counter,usages)}
             </div>
             
             <div class ="list-usage-difference">
                 
-                <p class="list-usage-difference-1">${(usage.zaehlerstand - usages[counter+1].zaehlerstand).toFixed(2)} kWh</p>
-                <p class="list-usage-difference-2">${usages[counter+1].datum} - ${usage.datum}</p>
+                <p class="list-usage-difference-1">${consumptionSinceLastTime(usage.zaehlerstand, counter, usages)}</p>
+                <p class="list-usage-difference-1">${consumptionTime(usage.datum, counter, usages)}</p>
             
             </div>
 
@@ -99,6 +99,40 @@ function appendById(id, elementToAppend) {
   } else {
       console.error(`Element with ID not found: ${id}`);
   }
+}
+
+function consumptionImage(counter,usages){
+    if (counter < usages.length){
+        
+        return `<img src="img/energy-consumption_dark.png">`
+    }
+    else{
+    return"";
+    }
+
+}
+
+function consumptionSinceLastTime(newConsumption,counter,usages) {
+    if (counter < usages.length){
+        var difference = (newConsumption - usages[counter].zaehlerstand).toFixed(2);
+        var differencekWh = difference + " kWh";
+        return differencekWh;
+    }
+    else{
+    return "";
+    }
+}
+
+function consumptionTime(datum, counter, usages){
+    if(counter < usages.length){
+        var timeDifference = usages[counter].datum + "-" + datum
+        return timeDifference;
+    }
+    else{
+        return"";
+    }
+
+
 }
 
 /**
