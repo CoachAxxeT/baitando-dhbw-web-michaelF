@@ -31,7 +31,7 @@ function showUsages(usages) {
 
     <div class ="list-usage-difference-firstline">
         <p class="list-usage-difference-1-firstline">${(usages[0].zaehlerstand - usages[usages.length-1].zaehlerstand).toFixed(2)} kWh</p>
-        <p class="list-usage-difference-2-firstline">${usages[usages.length-1].datum} - ${usages[0].datum}</p>
+        <p class="list-usage-difference-2-firstline">${formatDate(new Date(usages[usages.length-1].datum))} - ${formatDate(new Date(usages[0].datum))}</p>
     </div>
 
     <div class="list-usage-delete">
@@ -125,7 +125,7 @@ function consumptionSinceLastTime(newConsumption,counter,usages) {
 
 function consumptionTime(datum, counter, usages){
     if(counter < usages.length){
-        var timeDifference = usages[counter].datum + "-" + datum
+        var timeDifference = formatDate(new Date(usages[counter].datum)) + " - " + formatDate(new Date (datum));
         return timeDifference;
     }
     else{
