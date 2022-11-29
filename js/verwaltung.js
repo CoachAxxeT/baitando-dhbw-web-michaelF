@@ -14,7 +14,7 @@ muss noch bearbeitet werden
 */
 //hier muss noch die rote zeile eingefügt werden
 function showUsages(usages) {
- if( usages.length > 0)
+ if(usages){
     
     var usageFirstLine =`
     <div class="list-usage-date">
@@ -43,10 +43,11 @@ function showUsages(usages) {
     var usageLi = document.createElement("li");
     usageLi.innerHTML = usageFirstLine;
     appendById("usages", usageLi);
-    
- 
+ }
+    var counter = 1;
     if (usages) {
       for (var usage of usages) {
+          
           var usageHtmlContent = 
           `
             <div class="list-usage-date">
@@ -62,10 +63,11 @@ function showUsages(usages) {
             <div class ="list-usage-difference-image">
                 <img src="img/energy-consumption_dark.png">
             </div>
-
+            
             <div class ="list-usage-difference">
-                <p class="list-usage-difference-1">Verbrauch</p>
-                <p class="list-usage-difference-2">Datum</p>
+                <p class="list-usage-difference-1">${usage.zaehlerstand - usages[counter].zaehlerstand}kWh</p>
+                <p class="list-usage-difference-2">${usages[counter].datum} - ${usage.datum}</p>
+            
             </div>
 
             <div class="list-usage-delete">
@@ -74,30 +76,8 @@ function showUsages(usages) {
           
           
           `
-          
-          /*`
-
-
-          <div class="list-usage-checkbox">
-              <img src="img/counter_dark.png" onclick="deleteUsage('${usage.id}')"/>
-          </div>
-          <div class="list-usage-description">
-              <p class="list-usage-title">${usage.zaehlerstand}</p>
-              <p class="list-usage-notes">${usage.zaehlerstand}</p>
-          </div>
-          <div class="list-usage-due">
-              <img src="img/counter_dark.png"/>
-              <p>${formatDate(new Date(usage.datum))}</p>
-          </div>
-          <div class="list-usage-responsible">
-              <img src="img/counter_dark.png"/>
-              <p>${usage.zaehlerstand}</p>
-          </div>
-          <div class="list-usage-edit">
-              <a href="anlage.html?id=${usage.id}"><img src="img/counter_dark.png"/></a>
-          </div>
-      `*/;
-
+ ;
+            counter = counter +1
           var usageLi = document.createElement("li");
           usageLi.innerHTML = usageHtmlContent;
           appendById("usages", usageLi);
