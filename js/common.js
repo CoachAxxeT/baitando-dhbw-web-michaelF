@@ -34,20 +34,16 @@ function bblsortUsages(usages){
     
   for(var i = 0; i < usages.length; i++){
      
-    // Last i elements are already in place 
     for(var j = 0; j < ( usages.length - i -1 ); j++){
        
-      // Checking if the item at present iteration
-      // is greater than the next iteration
       if(usages[j].datum < usages[j+1].datum){
          
-        // If the condition is true then swap them
         var temp = usages[j]
         usages[j] = usages[j + 1]
         usages[j+1] = temp
       }
     }
   }
-  // Print the sorted array
+  // Return the sorted Array
   return usages;
  }
