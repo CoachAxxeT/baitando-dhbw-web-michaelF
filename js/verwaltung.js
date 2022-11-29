@@ -43,7 +43,7 @@ function showUsages(usages) {
     usageLi.innerHTML = usageFirstLine;
     appendById("usages", usageLi);
  }
-    var counter = 1;
+    var counter = 0;
     if (usages) {
       for (var usage of usages) {
         
@@ -65,8 +65,8 @@ function showUsages(usages) {
             
             <div class ="list-usage-difference">
                 
-                <p class="list-usage-difference-1">${(usage.zaehlerstand - usages[counter].zaehlerstand).toFixed(2)} kWh</p>
-                <p class="list-usage-difference-2">${usages[counter].datum} - ${usage.datum}</p>
+                <p class="list-usage-difference-1">${(usage.zaehlerstand - usages[counter+1].zaehlerstand).toFixed(2)} kWh</p>
+                <p class="list-usage-difference-2">${usages[counter+1].datum} - ${usage.datum}</p>
             
             </div>
 
@@ -76,8 +76,10 @@ function showUsages(usages) {
           
           
           `
+        
  ;
-            counter = counter +1
+ 
+          counter = counter +1
           var usageLi = document.createElement("li");
           usageLi.innerHTML = usageHtmlContent;
           appendById("usages", usageLi);
