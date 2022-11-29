@@ -14,7 +14,16 @@ muss noch bearbeitet werden
 */
 //hier muss noch die rote zeile eingefügt werden
 function showUsages(usages) {
-  if (usages) {
+ if( usages.length > 0)
+    var usageFirstLine =`
+    
+    <div>Test</div>`;
+    var usageLi = document.createElement("li");
+    usageLi.innerHTML = usageFirstLine;
+    appendById("usages", usageLi);
+    
+ 
+    if (usages) {
       for (var usage of usages) {
           var usageHtmlContent = 
           `

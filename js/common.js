@@ -4,6 +4,7 @@
  * @returns {*[]|any} Stored usages from local storage or empty array, if no usages were present.
  */
  function loadStoredUsages(storageKey = "usages") {
+
   var storedUsagesJson = localStorage.getItem(storageKey);
   if (storedUsagesJson) {
       var usages = JSON.parse(storedUsagesJson);
@@ -27,3 +28,5 @@ function storeUsages(usages, storageKey = "usages") {
       console.error("No usages to store");
   }
 }
+
+
