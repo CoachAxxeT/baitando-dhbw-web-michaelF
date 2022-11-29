@@ -15,7 +15,6 @@ muss noch bearbeitet werden
 //hier muss noch die rote zeile eingefügt werden
 function showUsages(usages) {
  if(usages){
-    
     var usageFirstLine =`
     <div class="list-usage-date">
       
@@ -47,7 +46,7 @@ function showUsages(usages) {
     var counter = 1;
     if (usages) {
       for (var usage of usages) {
-          
+        
           var usageHtmlContent = 
           `
             <div class="list-usage-date">
