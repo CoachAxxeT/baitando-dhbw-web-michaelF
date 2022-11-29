@@ -18,7 +18,8 @@ function showUsages(usages) {
     var usageFirstLine =`
     
     <div>Test</div>
-    <div>${usages[0].zaehlerstand}</div>`;
+    <div>${usages[0].zaehlerstand}</div>
+    `;
     var usageLi = document.createElement("li");
     usageLi.innerHTML = usageFirstLine;
     appendById("usages", usageLi);
@@ -28,7 +29,6 @@ function showUsages(usages) {
       for (var usage of usages) {
           var usageHtmlContent = 
           `
-            
             <div class="list-usage-date">
                 <img src="img/calendar.png">
                 <p>${formatDate(new Date(usage.datum))}</p>
