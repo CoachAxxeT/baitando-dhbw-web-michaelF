@@ -8,8 +8,9 @@
   var storedUsagesJson = localStorage.getItem(storageKey);
   if (storedUsagesJson) {
       var usages = JSON.parse(storedUsagesJson);
-      console.debug(`Count of loaded usages: ${usages.length}`);
-      return usages;
+      var sortedUsages = bblsortUsages(usages);
+      console.debug(`Count of loaded usages: ${sortedUsages.length}`);
+      return sortedUsages;
   }
 
   return [];
@@ -29,4 +30,24 @@ function storeUsages(usages, storageKey = "usages") {
   }
 }
 
-
+function bblsortUsages(usages){
+    
+  for(var i = 0; i < usages.length; i++){
+     
+    // Last i elements are already in place 
+    for(var j = 0; j < ( usages.length - i -1 ); j++){
+       
+      // Checking if the item at present iteration
+      // is greater than the next iteration
+      if(usages[j].datum > usages[j+1].datum){
+         
+        // If the condition is true then swap them
+        var temp = usages[j]
+        usages[j] = usages[j + 1]
+        usages[j+1] = temp
+      }
+    }
+  }
+  // Print the sorted array
+  return usages;
+ }

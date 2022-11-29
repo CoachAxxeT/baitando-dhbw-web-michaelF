@@ -17,7 +17,8 @@ function showUsages(usages) {
  if( usages.length > 0)
     var usageFirstLine =`
     
-    <div>Test</div>`;
+    <div>Test</div>
+    <div>${usages[0].zaehlerstand}</div>`;
     var usageLi = document.createElement("li");
     usageLi.innerHTML = usageFirstLine;
     appendById("usages", usageLi);
