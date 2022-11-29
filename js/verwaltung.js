@@ -116,7 +116,7 @@ function consumptionSinceLastTime(newConsumption,counter,usages) {
     if (counter < usages.length){
         var difference = (newConsumption - usages[counter].zaehlerstand).toFixed(2);
         var differencekWh = difference + " kWh";
-        return differencekWh;
+        return `<p class="list-usage-difference-1">` + differencekWh + `</p>`;
     }
     else{
     return "";
@@ -126,7 +126,7 @@ function consumptionSinceLastTime(newConsumption,counter,usages) {
 function consumptionTime(datum, counter, usages){
     if(counter < usages.length){
         var timeDifference = formatDate(new Date(usages[counter].datum)) + " - " + formatDate(new Date (datum));
-        return timeDifference;
+        return `<p class="list-usage-difference-2">`+timeDifference+`</p>`;
     }
     else{
         return"";
