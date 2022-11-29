@@ -31,7 +31,7 @@ function showUsages(usages) {
     </div>
 
     <div class ="list-usage-difference-firstline">
-        <p class="list-usage-difference-1-firstline">${usages[0].zaehlerstand - usages[usages.length-1].zaehlerstand} kWh</p>
+        <p class="list-usage-difference-1-firstline">${(usages[0].zaehlerstand - usages[usages.length-1].zaehlerstand).toFixed(2)} kWh</p>
         <p class="list-usage-difference-2-firstline">${usages[usages.length-1].datum} - ${usages[0].datum}</p>
     </div>
 
@@ -65,7 +65,8 @@ function showUsages(usages) {
             </div>
             
             <div class ="list-usage-difference">
-                <p class="list-usage-difference-1">${usage.zaehlerstand - usages[counter].zaehlerstand}kWh</p>
+                
+                <p class="list-usage-difference-1">${(usage.zaehlerstand - usages[counter].zaehlerstand).toFixed(2)} kWh</p>
                 <p class="list-usage-difference-2">${usages[counter].datum} - ${usage.datum}</p>
             
             </div>
