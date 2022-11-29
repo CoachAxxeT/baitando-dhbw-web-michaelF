@@ -16,9 +16,28 @@ muss noch bearbeitet werden
 function showUsages(usages) {
  if( usages.length > 0)
     var usageFirstLine =`
+    <div class="list-usage-date">
+      
+    </div>
+
+    <div class="list-usage-counter-firstline">
+      <img src="img/counter_light.png">
+      <p>${usages[0].zaehlerstand} kWh</p>
+    </div>
+
+<div class ="list-usage-difference-image-firstline">
+    <img src="img/energy-consumption_light.png">
+</div>
+
+<div class ="list-usage-difference-firstline">
+    <p class="list-usage-difference-1-firstline">Verbrauch</p>
+    <p class="list-usage-difference-2-firstline">Datum</p>
+</div>
+
+<div class="list-usage-delete">
     
-    <div>Test</div>
-    <div>${usages[0].zaehlerstand}</div>
+</div>
+
     `;
     var usageLi = document.createElement("li");
     usageLi.innerHTML = usageFirstLine;

@@ -48,45 +48,8 @@
   margin-top: auto;
   margin-bottom: auto;
 }
-/*
-.list-usage-title {
-  font-weight: bold;
-}
 
-.list-usage-notes {
-  font-style: italic;
-}
 
-.list-usage-checkbox, .list-usage-edit {
-  width: 5%;
-}
-
-.list-usage-due {
-  width: 30%;
-  display: flex;
-  margin: auto;
-  font-weight: bold;
-}
-
-.list-usage-responsible {
-  width: 25%;
-  display: flex;
-  margin: auto;
-  font-weight: bold;
-}
-
-.list-usage-description {
-  width: 50%;
-}
-
-.list-usage-due img, .list-usage-due p, .list-usage-responsible img,.list-usage-responsible p {
-  margin-top: auto;
-  margin-bottom: auto;
-  text-align: left;
-  padding: 0 5px;
-}
-
-*/
 .list-usage-date{
   width: 30%;
   display: flex;
@@ -134,7 +97,39 @@
   text-align: left;
 }
 
-.list-firstline{
-background-color: red;
+.list-usage-counter-firstline{
+  width: 30%;
+  display: flex;
+  margin: auto;
+  font-weight: bold;
+  color: white;
+}
 
+.list-usage-counter-firstline img, .list-usage-counter-firstline p{
+  margin-top: auto;
+  margin-bottom: auto;
+  text-align: left;
+  padding: 0 5px;
+}
+
+.list-usage-difference-image-firstline{
+  width: 5%;
+  margin-top: auto;
+  margin-bottom: auto;
+  text-align: left;
+
+}
+.list-usage-difference-firstline{
+  width: 25%;
+  margin-top: auto;
+  margin-bottom: auto;
+  text-align: left;
+  color:white;
+}
+.list-usage-difference-1-firstline{
+  font-weight: bold;
+}
+
+.list-usage-difference-2-firstline{
+  font-style: italic;
 }
