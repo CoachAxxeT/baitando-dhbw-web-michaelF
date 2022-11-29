@@ -39,7 +39,7 @@ function bblsortUsages(usages){
        
       // Checking if the item at present iteration
       // is greater than the next iteration
-      if(usages[j].datum > usages[j+1].datum){
+      if(usages[j].datum < usages[j+1].datum){
          
         // If the condition is true then swap them
         var temp = usages[j]

@@ -15,6 +15,7 @@ muss noch bearbeitet werden
 //hier muss noch die rote zeile eingefügt werden
 function showUsages(usages) {
  if( usages.length > 0)
+    
     var usageFirstLine =`
     <div class="list-usage-date">
       
@@ -25,18 +26,18 @@ function showUsages(usages) {
       <p>${usages[0].zaehlerstand} kWh</p>
     </div>
 
-<div class ="list-usage-difference-image-firstline">
-    <img src="img/energy-consumption_light.png">
-</div>
+    <div class ="list-usage-difference-image-firstline">
+        <img src="img/energy-consumption_light.png">
+    </div>
 
-<div class ="list-usage-difference-firstline">
-    <p class="list-usage-difference-1-firstline">Verbrauch</p>
-    <p class="list-usage-difference-2-firstline">Datum</p>
-</div>
+    <div class ="list-usage-difference-firstline">
+        <p class="list-usage-difference-1-firstline">${usages[0].zaehlerstand - usages[usages.length-1].zaehlerstand} kWh</p>
+        <p class="list-usage-difference-2-firstline">Datum</p>
+    </div>
 
-<div class="list-usage-delete">
-    
-</div>
+    <div class="list-usage-delete">
+        
+    </div>
 
     `;
     var usageLi = document.createElement("li");
