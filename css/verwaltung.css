@@ -97,6 +97,11 @@
   text-align: left;
 }
 
+.list-usage-delete img:hover{
+
+  cursor: pointer;
+}
+
 .list-usage-counter-firstline{
   width: 30%;
   display: flex;
