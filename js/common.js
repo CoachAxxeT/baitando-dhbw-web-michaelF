@@ -1,7 +1,7 @@
 /**
  * Load stored usages from local storage, if some are stored there.asjdh 
  *
- * @returns {*[]|any} Stored usages from local storage or empty array, if no usages were present.
+ * @returns {*[]|any} Stored usages from local storage or empty array, if no usages were present.  
  */
  function loadStoredUsages(storageKey = "usages") {
 
