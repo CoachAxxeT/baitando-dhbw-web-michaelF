@@ -10,11 +10,12 @@
   background-color: black;
   color: white;
   margin-right: 20px;
+  width:320px;
 }
 
 /* Alle Liste Elemente 
     Firstline hat extra klassen
-    
+
 
 */
 .list-allusages {
